@@ -3,9 +3,8 @@ type: docker
 name: default 
 
 steps:
-- name: greeting
-  image: alpine
+- name: cl-env-setup
+  image: fukamachi/roswell
   commands:
-  - echo hello
-  - echo world
+    - ros run --eval '(write "test") (quit)'
 
